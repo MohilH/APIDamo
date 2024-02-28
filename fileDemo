@@ -1,0 +1,39 @@
+public class ContactsAPIDBContext : DbContext
+	{
+		public ContactsAPIDBContext(DbContextOptions options) : base(options)
+		{
+		}
+		public DbSet<Contact> Contacts { get; set; }
+	}
+
+public class AddContactRequest
+	{
+		public string FullName { get; set; }
+		public string Email { get; set; }
+		public long Phone { get; set; }
+		public string Address { get; set; }
+	}
+ public class Contact
+	{
+		public Guid Id { get; set; }
+		public string FullName { get; set; }
+		public string Email { get; set; }
+		public long Phone { get; set; }
+		public string Address { get; set; }
+	}
+ public class UpdateContactRequest
+	{
+		public string FullName { get; set; }
+		public string Email { get; set; }
+		public long Phone { get; set; }
+		public string Address { get; set; }
+	}
+
+ "ConnectionStrings": {
+		"ContactsApiConnectionString": "Server=.\\ENTERPRISE2019;Database=ContactsDB;Integrated Security=True;MultipleActiveResultSets=true;App=ContactsDB"
+		//"ConnectionString": "Server=.\\ENTERPRISE2019;Database=naesbwry_webvision;Integrated Security=True;MultipleActiveResultSets=true;App=naesbwry_webvision"
+	}
+
+ //builder.Services.AddDbContext<ContactsAPIDBContext>(options => options.UseInMemoryDatabase("ContactsDB"));
+builder.Services.AddDbContext<ContactsAPIDBContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("ContactsApiConnectionString")));
