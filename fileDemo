@@ -37,3 +37,18 @@ public class AddContactRequest
  //builder.Services.AddDbContext<ContactsAPIDBContext>(options => options.UseInMemoryDatabase("ContactsDB"));
 builder.Services.AddDbContext<ContactsAPIDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ContactsApiConnectionString")));
+\\===============================================================================================================
+generic repository pattern c# with dependency injection net core 6
+https://www.c-sharpcorner.com/article/generic-repository-pattern-in-asp-net-core/
+https://www.c-sharpcorner.com/UploadFile/3d39b4/crud-operations-using-the-generic-repository-pattern-and-dep/
+https://www.c-sharpcorner.com/article/unit-of-work-with-generic-repository-implementation-using-net-core-6-web-api/
+https://www.c-sharpcorner.com/interviews/
+
+
+
+
+
+
+
+
+
